@@ -1,19 +1,22 @@
 
-const MAXIMOS_INTENTOS = 8, // Intentos máximos que tiene el jugador
-    COLUMNAS = 4, // Columnas del memorama
+const MAXIMOS_INTENTOS = 11, // Intentos máximos que tiene el jugador
+    COLUMNAS = 6, // Columnas del memorama
     SEGUNDOS_ESPERA_VOLTEAR_IMAGEN = 1, // Por cuántos segundos mostrar ambas imágenes
-    NOMBRE_IMAGEN_OCULTA = "./img/question.png"; // La imagen que se muestra cuando la real está oculta
+    NOMBRE_IMAGEN_OCULTA = "./img/question2.jpg"; // La imagen que se muestra cuando la real está oculta
 new Vue({
     el: "#app",
     data: () => ({
         // La ruta de las imágenes. Puede ser relativa o absoluta
         imagenes: [
-            "./img/cabra.jpg",
-            "./img/conejo.jpg",
-            "./img/leon.jpg",
-            "./img/oveja.jpg",
-            "./img/perro.jpg",
-            "./img/gato.jpg",
+            "./img/hongo.jpg",
+            "./img/hongorojo.jpg",
+            "./img/marioca.jpg",
+            "./img/mariopa.jpg",
+            "./img/Toadette.jpg",
+            "./img/dragon.jpg",
+            "./img/verde.jpg",
+            "./img/yoshi.jpg",
+            "./img/planta.jpg",
         ],
         memorama: [],
         // Útiles para saber cuál fue la carta anteriormente seleccionada
@@ -57,7 +60,7 @@ new Vue({
             Swal.fire({
                     title: "Perdiste",
                     html: `
-                <img class="img-fluid" src="./img/perdiste.png" alt="Perdiste">
+                <img class="img-fluid" src="./img/perdisteM.png" alt="Perdiste">
                 <p class="h4">Agotaste tus intentos</p>`,
                     confirmButtonText: "Jugar de nuevo",
                     allowOutsideClick: false,
@@ -70,7 +73,7 @@ new Vue({
             Swal.fire({
                     title: "¡Ganaste!",
                     html: `
-                <img class="img-fluid" src="./img/ganaste.png" alt="Ganaste">
+                <img class="img-fluid" src="./img/ganasteM.jpg" alt="Ganaste">
                 <p class="h4">Muy bien hecho</p>`,
                     confirmButtonText: "Jugar de nuevo",
                     allowOutsideClick: false,
@@ -195,7 +198,6 @@ new Vue({
                 .then(this.reiniciarJuego)
                 // Ponerla en modo carga
             Swal.showLoading();
-
 
             let total = this.imagenes.length,
                 contador = 0;
